@@ -21,13 +21,13 @@ def main():
         case 'g':
             player.p_class = "Guerrreiro"
             player.name = input("Escolha seu nome: ")
-            player.life = 100
+            player.life = 60
             player.strength = 10
             player.attack_type = "Golpe de espada"
         case 'm':
             player.p_class = "Mago"
             player.name = input("Escolha seu nome: ")
-            player.life = 70
+            player.life = 40
             player.strength = 15
             player.attack_type = "Bola de fogo"
         case _:
@@ -63,7 +63,6 @@ def main():
 
     bat_1 = ba.bat()
     bat_2 = ba.bat()
-    bat_3 = ba.bat()
     squeleton_1 = s.squeleton()
     squeleton_2 = s.squeleton()
     squeleton_3 = s.squeleton()
@@ -81,9 +80,37 @@ def main():
 
 
     def boss_room():
-            # A fazer
-            print()
+            print("\033[35mOlá.")
+            time.sleep(2)
+            print("\033[35mQue bom que você veio...")
+            time.sleep(2)
+            print(f"\033[35mSinceramente, eu estou cansado de todo esse ódio entre nós, {player.name}.")
+            time.sleep(2)
+            print("\033[35mPor quê não deixamos isso pra trás?")
+            time.sleep(2)
+            choice_6 = input(f"Você tem duas Opções:\n\033[34m1- Fazer as pazes\033[m\n\033[31m2- Lutar até a morte com {boss.name}\033[m\n"
+                             "Digite \033[34m1\033[m ou \033[31m2\033[m para responder")
+            
+            match choice_6:
+                case "1":
+                    def ending():    
+                        print("Mensagem fofa de pazes, jogo zerado pacifista")
+                        choice_7 = input("Jogar de novo? Digite s ou n para responder: ")
+                        match choice_7:
+                            case "s":
+                                main()
+                            case "n":
+                                return
+                            case _:
+                                print("\033[31mEntrada inválida!\033[m")
+                                time.sleep(2)
+                                ending()
+                    ending()
 
+                case _:
+                    print("\033[31mEntrada inválida!\033[m")
+                    time.sleep(2)
+                    boss_room()
 
     def fourth_room():
         print("_"*20,"\nQuarta sala.")
@@ -154,7 +181,7 @@ def main():
                     time.sleep(2)
                     print("Você encontrou uma porta trancada, deseja abrir e entrar?\n\033[31mAviso! Essa decisão te levará ao fim do jogo!\033[m")
                     time.sleep(2)
-                    choice_5 = input("Digite \"s\" ou \"n\", para sim ou não.").lower()
+                    choice_5 = input("Digite \"s\" ou \"n\", para sim ou não. " ).lower()
                         
                     match choice_5:
                         case "s":
@@ -208,7 +235,7 @@ def main():
             case _:
                     print("\033[31mEntrada inválida!\033[m")
                     time.sleep(2)
-                    third_room()
+                    fourth_room()
 
             
 
@@ -270,7 +297,7 @@ def main():
                         time.sleep(2)
                         print("Ele já estava morto... ")
                         time.sleep(2)
-                        first_room()
+                        third_room()
                     
                 case "5":
                     print("Você decide abrir o baú...")
