@@ -88,23 +88,23 @@ def main():
     def fourth_room():
         print("_"*20,"\nQuarta sala.")
         time.sleep(2)    
-        print("Você tem 5 opções:\nIr à segunda sala.\nIr à terceira sala.\nHá dois esqueletos em frente a uma porta, lutar?\nHá um canto escuro, explorar?"
-                        "\nAbrir baú.")
+        print("Você tem 5 opções:\n1- Ir à segunda sala.\n2- Ir à terceira sala.\n3- Há dois esqueletos em frente a uma porta, lutar?\n4- Há um canto escuro, explorar?"
+                        "\n5- Abrir baú.")
         time.sleep(2)    
-        choice_4 = input("Digite p1, p2, 2e, ce ou ba, respectivamente, para escolher sua ação. ").lower()
+        choice_4 = input("Digite 1, 2, 3, 4 ou 5 para escolher sua ação. ").lower()
 
         match choice_4:
-            case "p1":
+            case "1":
                 print("Você decide ir á  segunda sala.")
                 time.sleep(2)
                 second_room()
                 
-            case "p2":
+            case "2":
                 print("Você decide ir à terceira sala.")
                 time.sleep(2)
                 third_room()
                 
-            case "2e":
+            case "3":
                 print("Você decide enfrentar os dois esqueletos!")
                 time.sleep(2)
                 if fth_room.squeleton1 == True and fth_room.squeleton2 == True:
@@ -173,7 +173,7 @@ def main():
                     time.sleep(2)
                     fourth_room()
 
-            case "ce":
+            case "4":
                 print("Você decide explorar o canto escuro...")
                 time.sleep(2)
                 
@@ -189,7 +189,7 @@ def main():
                     time.sleep(2)
                     fourth_room()
             
-            case "ba":
+            case "5":
                 print("Você decide abrir o baú.")
                 time.sleep(2)
 
@@ -216,28 +216,28 @@ def main():
     def third_room():
             print("_"*20,"\nTerceira sala.")
             time.sleep(2)    
-            print("Você tem 5 opções:\nIr à primeira sala.\nIr à segunda sala.\nAbrir a porta à sua frente.\nHá um canto escuro, explorar?"
-                            "\nAbrir o baú.")
+            print("Você tem 5 opções:\n1- Ir à primeira sala.\n2- Ir à segunda sala.\n3- Abrir a porta à sua frente.\n4- Há um canto escuro, explorar?"
+                            "\n5- Abrir o baú.")
             time.sleep(2)    
-            choice_4 = input("Digite p1, p2, p3, ce ou ba, respectivamente, para escolher sua ação. ")
+            choice_4 = input("Digite 1, 2, 3, 4 ou 5 para escolher sua ação. ")
 
             match choice_4:
-                case "p1":
+                case "1":
                     print("Você decide ir á  primeira sala")
                     time.sleep(2)
                     first_room()
                 
-                case "p2":
+                case "2":
                     print("Você decide ir à segunda sala.")
                     time.sleep(2)
                     second_room()
 
-                case "p3":
+                case "3":
                     print("Você decide abrir a porta a sua frente.")
                     time.sleep(2)
                     fourth_room()
 
-                case "ce":
+                case "4":
                     print("Você decide explorar o canto escuro...")
                     time.sleep(2)
                     print("Você achou um morcego!")
@@ -272,7 +272,7 @@ def main():
                         time.sleep(2)
                         first_room()
                     
-                case "ba":
+                case "5":
                     print("Você decide abrir o baú...")
                     time.sleep(2)
                     print("Você abre o baú.")
@@ -297,23 +297,23 @@ def main():
 
 
     def first_room():
-        print("_"*20,"\nPrimeira sala.\nVocê tem 4 opções:\nAbrir a porta à sua direita.\nAbrir a porta à sua frente.\nHá um canto escuro, explorar?"
-                        "\nAbrir o baú á sua esquerda.")
+        print("_"*20,"\nPrimeira sala.\nVocê tem 4 opções:\n1- Abrir a porta à sua direita.\n2- Abrir a porta à sua frente.\n3- Há um canto escuro, explorar?"
+                        "\n4- Abrir o baú á sua esquerda.")
         time.sleep(2)    
-        choice_2 = input("Digite p1, p2, ce ou ba, respectivamente, para escolher sua ação. ").lower()
+        choice_2 = input("Digite 1, 2, 3 ou 4 para escolher sua ação. ")
         
         match choice_2:
-            case "p1":
+            case "1":
                 print("Você escolhe entrar na porta a sua direita. ")
                 time.sleep(2)
                 second_room()
             
-            case "p2":
+            case "2":
                 print("Você escolhe entrar na porta à sua frente. ")
                 time.sleep(2)
                 third_room()
             
-            case "ce":
+            case "3":
                 print("Você decide explorar o canto escuro...")
                 time.sleep(2)
                 print("Você achou um morcego!")
@@ -348,7 +348,7 @@ def main():
                     time.sleep(2)
                     first_room()
 
-            case "ba":  
+            case "4":  
                 print("Você decide abrir o baú...")
                 time.sleep(2)
                 print("Você abre o baú.")
@@ -375,27 +375,27 @@ def main():
     def second_room():
         print("_"*20,"\nSegunda sala.")
         time.sleep(2)    
-        print("Você tem 5 opções:\nIr à primeira sala.\nAbrir a porta à sua direita.\nAbrir a porta à sua frente.\nHá um canto escuro, explorar?"
-                        "\nConversar com uma figura humanóide presente.")
+        print("Você tem 5 opções:\n1- Ir à primeira sala.\n2- Abrir a porta à sua direita.\n3- Abrir a porta à sua frente.\n4- Há um canto escuro, explorar?"
+                        "\n5- Conversar com uma figura humanóide presente.")
         time.sleep(2)    
-        choice_3 = input("Digite p1, p2, p3, ce ou fh, respectivamente, para escolher sua ação. ").lower()
+        choice_3 = input("Digite 1, 2, 3, 4 ou 5 para escolher sua ação. ").lower()
         
         match choice_3:
-            case "p1":
+            case "1":
                 print("Você decide voltar.")
                 first_room()
             
-            case "p2":
+            case "2":
                 print("Você escolhe entrar na porta a sua direita. ")
                 time.sleep(2)
                 third_room()
             
-            case "p3":
+            case "3":
                 print("Você escolhe entrar na porta à sua frente. ")
                 time.sleep(2)
                 fourth_room()
             
-            case "ce":
+            case "4":
                 print("Você decide explorar o canto escuro...")
                 time.sleep(2)
                 
@@ -411,7 +411,7 @@ def main():
                     time.sleep(2)
                     second_room()
 
-            case "fh":  
+            case "5":  
                 print("Você decide falar com a figura humanóide...")
                 time.sleep(2)
                 print("Você achou um esqueleto!")
