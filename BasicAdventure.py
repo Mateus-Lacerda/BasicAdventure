@@ -79,6 +79,15 @@ def main():
     time.sleep(2)
 
 
+    def death(): 
+        print("\033[31mVocê morreu...\033[m")
+        main()
+
+
+    def show_status():
+        print(f"\033[31mVida: {player.life}\033[m\n\033[34mForça: {player.strength}\033[m")
+
+
     def boss_room():
             print("\033[35mOlá.")
             time.sleep(2)
@@ -112,8 +121,10 @@ def main():
                     time.sleep(2)
                     boss_room()
 
+
     def fourth_room():
         print("_"*20,"\nQuarta sala.")
+        show_status()
         time.sleep(2)    
         print("Você tem 5 opções:\n1- Ir à segunda sala.\n2- Ir à terceira sala.\n3- Há dois esqueletos em frente a uma porta, lutar?\n4- Há um canto escuro, explorar?"
                         "\n5- Abrir baú.")
@@ -237,11 +248,10 @@ def main():
                     time.sleep(2)
                     fourth_room()
 
-            
-
                             
     def third_room():
             print("_"*20,"\nTerceira sala.")
+            show_status()
             time.sleep(2)    
             print("Você tem 5 opções:\n1- Ir à primeira sala.\n2- Ir à segunda sala.\n3- Abrir a porta à sua frente.\n4- Há um canto escuro, explorar?"
                             "\n5- Abrir o baú.")
@@ -324,8 +334,11 @@ def main():
 
 
     def first_room():
-        print("_"*20,"\nPrimeira sala.\nVocê tem 4 opções:\n1- Abrir a porta à sua direita.\n2- Abrir a porta à sua frente.\n3- Há um canto escuro, explorar?"
-                        "\n4- Abrir o baú á sua esquerda.")
+        print("_"*20,"\nPrimeira sala.\n")
+        show_status()
+        time.sleep(2)
+        print("Você tem 4 opções:\n1- Abrir a porta à sua direita.\n2- Abrir a porta à sua frente.\n3- Há um canto escuro, explorar?"
+              "\n4- Abrir o baú á sua esquerda.")
         time.sleep(2)    
         choice_2 = input("Digite 1, 2, 3 ou 4 para escolher sua ação. ")
         
@@ -401,6 +414,7 @@ def main():
 
     def second_room():
         print("_"*20,"\nSegunda sala.")
+        show_status()
         time.sleep(2)    
         print("Você tem 5 opções:\n1- Ir à primeira sala.\n2- Abrir a porta à sua direita.\n3- Abrir a porta à sua frente.\n4- Há um canto escuro, explorar?"
                         "\n5- Conversar com uma figura humanóide presente.")
@@ -480,11 +494,6 @@ def main():
 
 
     first_room() ## Comando que inicializa o jogo
-
-
-    def death(): 
-        print("\033[31mVocê morreu...\033[m")
-        main()
 
 
 if __name__ == '__main__':
