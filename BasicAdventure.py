@@ -109,7 +109,7 @@ def main():
                             case "s":
                                 main()
                             case "n":
-                                return
+                                print("Obrigado por jogar!")
                             case _:
                                 print("\033[31mEntrada inválida!\033[m")
                                 time.sleep(2)
