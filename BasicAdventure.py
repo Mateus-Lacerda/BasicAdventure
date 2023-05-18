@@ -164,7 +164,7 @@ def main():
                         print('_'*20)
                         time.sleep(2)
 
-                    elif player.life <= 0:
+                    if player.life <= 0:
                         death()
 
                     print('_'*20)
@@ -182,10 +182,9 @@ def main():
                         
                     if squeleton_3.life <= 0:
                         print("Você matou o segundo esqueleto! ")
-                        print('_'*20)
                         time.sleep(2)
 
-                    elif player.life <= 0:
+                    if player.life <= 0:
                         death()
                         
                 if t_room.key == True:
@@ -296,11 +295,10 @@ def main():
                         
                         if bat_2.life <= 0:
                             print("Você matou o morcego! ")
-                            print('_'*20)
                             time.sleep(2)
                             third_room()
 
-                        elif player.life <= 0:
+                        if player.life <= 0:
                             death()
                         
                     else:
@@ -375,11 +373,10 @@ def main():
                     
                     if bat_1.life <= 0:
                         print("Você matou o morcego! ")
-                        print('_'*20)
                         time.sleep(2)
                         first_room()
 
-                    elif player.life <= 0:
+                    if player.life <= 0:
                         death()
 
                 else:
@@ -474,11 +471,10 @@ def main():
                     
                     if squeleton_1.life <= 0:
                         print("Você matou o esqueleto! ")
-                        print('_'*20)
                         time.sleep(2)
                         second_room()
 
-                    elif player.life <= 0:
+                    if player.life <= 0:
                         death()
 
                 else:
