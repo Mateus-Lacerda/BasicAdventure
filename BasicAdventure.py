@@ -16,6 +16,7 @@ def main():
     player = p.player()
     boss = bo.boss()
     boss.name = input("Quem é seu maior inimigo? ")
+    boss.attack_type = input("Qual é o seu maior medo? ")
 
     match choice_1:
         case 'g':
@@ -88,6 +89,21 @@ def main():
         print(f"\033[31mVida: {player.life}\033[m\n\033[34mForça: {player.strength}\033[m")
 
 
+    def credits():
+        print("FIM")
+        time.sleep(1)
+        print("Obrigado por jogar!")
+        time.sleep(1)
+        print("Créditos:")
+        time.sleep(1)
+        print("Mateus Lacerda")
+        time.sleep(1)        
+        print("Agradecimentos especiais:")
+        time.sleep(1)
+        print("Mateus Lacerda")
+        time.sleep(2)
+
+
     def boss_room():
             print("\033[35mOlá.")
             time.sleep(2)
@@ -98,13 +114,28 @@ def main():
             print("\033[35mPor quê não deixamos isso pra trás?")
             time.sleep(2)
             choice_6 = input(f"Você tem duas Opções:\n\033[34m1- Fazer as pazes\033[m\n\033[31m2- Lutar até a morte com {boss.name}\033[m\n"
-                             "Digite \033[34m1\033[m ou \033[31m2\033[m para responder")
+                             "Digite \033[34m1\033[m ou \033[31m2\033[m para responder. ")
             
             match choice_6:
                 case "1":
-                    def ending():    
-                        print("Mensagem fofa de pazes, jogo zerado pacifista")
+                    def ending_1():    
+                        print(f"\033[34mVocê faz as pazes com {boss.name}, afinal, pra que guardar rancor? ")
+                        time.sleep(2)
+                        print("Vocês conversam sobre as aventuras que você percorreu até aqui, sobre os monstros, armadilhas e...\033[m")
+                        time.sleep(2)
+                        print("\033[31mPera aí!")
+                        time.sleep(1)
+                        print("Porque tantos monstros e armadilhas, se ele só queria fazer as pazes? Tem coisa errada aí.")
+                        time.sleep(2)
+                        print(f"Você percebe que {boss.name} estava apenas te enganando, pois percebeu o aumento de sua força após sua curta jornada.")
+                        time.sleep(2)
+                        print("E o apunhala pelas costas.\033[m")
+                        time.sleep(2)
+                        print("\033[34mJogo zerado pacifista!\033[m")
+                        time.sleep(2)
+                        credits()
                         choice_7 = input("Jogar de novo? Digite s ou n para responder: ")
+                        
                         match choice_7:
                             case "s":
                                 main()
@@ -113,8 +144,48 @@ def main():
                             case _:
                                 print("\033[31mEntrada inválida!\033[m")
                                 time.sleep(2)
-                                ending()
-                    ending()
+                                ending_1()
+
+                    ending_1()
+                
+                case "2":
+                    def ending_2():
+                        print("\033[31mMuito bem... Eu estava mentindo de qualquer forma, hahaha...")
+                        time.sleep(2)
+                        print('_'*20)
+                        print("Entrando em batalha!")
+                        time.sleep(2)
+
+                        while boss.life >= 0 and player.life >=0:
+                            print(f"Você ataca com {player.attack_type}! ")
+                            boss.life -= player.strength
+                            time.sleep(2)
+                            print(f"{boss.name} te ataca com {boss.attack_type}\033[m")
+                            player.life -= boss.strength
+                            time.sleep(2)
+
+                        if player.life >= 0:
+                            print("\033[34mParabéns, você destruiu seu maior inimigo, enfrentando seus maiores medos!\033[m")
+                            time.sleep(2)
+                            print("\033[31mJogo zerado sanguinário!\033[m")
+                            time.sleep(2)
+                            credits()
+                            choice_8 = input("Jogar de novo? Digite s ou n para responder: ")
+                            
+                            match choice_8:
+                                case "s":
+                                    main()
+                                case "n":
+                                    print("Obrigado por jogar!")
+                                case _:
+                                    print("\033[31mEntrada inválida!\033[m")
+                                    time.sleep(2)
+                                    ending_2()
+                        
+                        else:
+                            death()
+
+                    ending_2()
 
                 case _:
                     print("\033[31mEntrada inválida!\033[m")
@@ -186,6 +257,10 @@ def main():
 
                     if player.life <= 0:
                         death()
+                
+                elif fth_room.squeleton1 == False and fth_room.squeleton2 == False: 
+                    print("Você acabou de matá-los!")
+                    time.sleep(2)
                         
                 if t_room.key == True:
                     time.sleep(2)
@@ -393,7 +468,7 @@ def main():
                 
                 if fst_room.chest == True:
                     print("Vocẽ achou uma poção de vida! ")
-                    player.life += random.randint(5,20)
+                    player.life += random.randint(10,20)
                     fst_room.chest = False
                     time.sleep(2)
                     first_room()
