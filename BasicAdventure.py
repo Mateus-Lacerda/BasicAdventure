@@ -115,6 +115,7 @@ def main():
             time.sleep(2)
             choice_6 = input(f"Você tem duas Opções:\n\033[34m1- Fazer as pazes\033[m\n\033[31m2- Lutar até a morte com {boss.name}\033[m\n"
                              "Digite \033[34m1\033[m ou \033[31m2\033[m para responder. ")
+            
             show_status()
 
             match choice_6:
