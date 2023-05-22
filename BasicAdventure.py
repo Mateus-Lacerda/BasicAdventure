@@ -22,14 +22,14 @@ def main():
         case 'g':
             player.p_class = "Guerrreiro"
             player.name = input("Escolha seu nome: ")
-            player.life = 60
-            player.strength = 10
+            player.life = 70
+            player.strength = 15
             player.attack_type = "Golpe de espada"
         case 'm':
             player.p_class = "Mago"
             player.name = input("Escolha seu nome: ")
-            player.life = 40
-            player.strength = 15
+            player.life = 50
+            player.strength = 20
             player.attack_type = "Bola de fogo"
         case _:
             print("\033[31mDigite apenas g ou m!\033[m")
@@ -115,7 +115,8 @@ def main():
             time.sleep(2)
             choice_6 = input(f"Você tem duas Opções:\n\033[34m1- Fazer as pazes\033[m\n\033[31m2- Lutar até a morte com {boss.name}\033[m\n"
                              "Digite \033[34m1\033[m ou \033[31m2\033[m para responder. ")
-            
+            show_status()
+
             match choice_6:
                 case "1":
                     def ending_1():    
