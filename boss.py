@@ -2,7 +2,11 @@ import random
 
 
 class boss:
-    name = ''
+    
+    def __init__(self, name, attack_type):
+        self.name = name
+        self.attack_type = attack_type
+
     life = random.randint(30,50)
     strength = random.randint(10,15)
-    attack_type = ''
+    

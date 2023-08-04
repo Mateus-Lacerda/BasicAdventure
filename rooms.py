@@ -1,4 +1,6 @@
 class rooms:
+    def __init__(self, name):
+        self.name = name
     name = ''
     chest = bool
     squeleton = bool

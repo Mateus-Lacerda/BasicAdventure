@@ -12,50 +12,26 @@ def main():
     ## Criação de personagem 
     print("\033[34mBem vindo ao BasicAdventure! Um jogo genérico de aventura, feito como um teste para exercitar conceitos de Python, divirta-se!\n","_"*125,"\033[m")
     time.sleep(2)
-    choice_1 = input("Escolha entre as classes guerreiro ou mago, digite \"g\" ou \"m\": \nMagos dão mais dano, mas têm menos vida. ").lower()
-    player = p.player()
-    boss = bo.boss()
-    boss.name = input("Quem é seu maior inimigo? ")
-    boss.attack_type = input("Qual é o seu maior medo? ")
-
-    match choice_1:
-        case 'g':
-            player.p_class = "Guerrreiro"
-            player.name = input("Escolha seu nome: ")
-            player.life = 70
-            player.strength = 15
-            player.attack_type = "Golpe de espada"
-        case 'm':
-            player.p_class = "Mago"
-            player.name = input("Escolha seu nome: ")
-            player.life = 50
-            player.strength = 20
-            player.attack_type = "Bola de fogo"
-        case _:
-            print("\033[31mDigite apenas g ou m!\033[m")
-            main()
+    player = p.player(input("Escolha entre as classes guerreiro ou mago, digite \"g\" ou \"m\": \nMagos dão mais dano, mas têm menos vida. ").lower().strip()[0])
+    boss = bo.boss(input("Quem é seu maior inimigo? \n"), input("Qual é o seu maior medo? "))  
 
     ## Criação de salas e inimigos
 
-    fst_room = r.rooms()
-    s_room = r.rooms()
-    t_room = r.rooms()
-    fth_room = r.rooms()
+    fst_room = r.rooms("Primeira Sala")
+    s_room = r.rooms("Segunda Sala")
+    t_room = r.rooms("Terceira Sala")
+    fth_room = r.rooms("Quarta Sala")
 
-    fst_room.name = "Primeira Sala"
     fst_room.bat = True
     fst_room.chest = True
 
-    s_room.name = "Segunda Sala"
     s_room.corner = True
     s_room.squeleton = True
 
-    t_room.name = "Terceira Sala"
     t_room.bat = True
     t_room.chest = True
     t_room.key = False
 
-    fth_room.name = "Quarta Sala"
     fth_room.squeleton1 = True
     fth_room.squeleton2 = True
     fth_room.corner = True
@@ -141,6 +117,8 @@ def main():
                         match choice_7:
                             case "s":
                                 main()
+                    
+
                             case "n":
                                 print("Obrigado por jogar!")
                             case _:
@@ -177,6 +155,8 @@ def main():
                             match choice_8:
                                 case "s":
                                     main()
+                        
+
                                 case "n":
                                     print("Obrigado por jogar!")
                                 case _:
@@ -295,6 +275,7 @@ def main():
                     print("Você achou um item de força, sua força aumenta!")
                     player.strength += random.randint(1,5)
                     fth_room.corner = False
+                    time.sleep(2)
                     fourth_room()
 
                 else:
@@ -311,6 +292,7 @@ def main():
                     print("Você achou uma poção de cura! ")
                     player.life += random.randint(5,20)
                     fth_room.chest = False
+                    time.sleep(2)
                     fourth_room()
 
                 else:
